@@ -32,7 +32,7 @@ words = {
     "capacity": "a measure of something's ability",
     "celestial": "of or relating to outer space",
     "censure": "to give someone a formal reprimand",
-    "circulation": "anything moving back and form or around in a predictable pattern",
+    "circulation": "anything moving back and forth or around in a predictable pattern",
     "coerce": "to get someone to do something by threat of force.",
     "cognition": "the ability to understand something",
     "colloquial": "used in or characteristic of familiar and informal conversation",
