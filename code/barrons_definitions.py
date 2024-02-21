@@ -118,7 +118,7 @@ words = {
     "incorporate": "to fully include something",
     "incredulous": "unwilling to admit or accept what is offered as true; skeptical",
     "indifference": "absense of compulsion to or toward one thing or another",
-    "indistiguishable": "not distinguishable",
+    "indistinguishable": "not able to be identified as different or distinct",
     "ineffective": "not capable of performing efficiently or as expected",
     "inefficacious": "not having the desired effect",
     "inexorable": "inevitable",
@@ -132,6 +132,7 @@ words = {
     "intuitive": "easy to use and figure out without directions",
     "inherent": "naturally occurring",
     "insolent": "insultingly contemptuous in speech or conduct",
+    "intolerable": "unable to put up with something or someone",
     "invasive": "something that goes somewhere it isn't wanted",
     "inversion": "the act of turning upside down",
     "irk": "to annoy",
@@ -147,6 +148,7 @@ words = {
     "mantra": "something that people repeat over and over to themselves in the hopes that it becomes true or as a "
               "means toward achieving a goal",
     "marginalize": "the action of making something less, often when it shouldn't be",
+    "meander": "to wander in a non-straight line and with little or no haste or purpose",
     "mechanization": "when something that used to be done by hand is now done by a machine",
     "meddle": "to tamper with something, often human situations or emotions",
     "metastasize": "spreading",
@@ -241,7 +243,7 @@ words = {
     "ubiquitous": "found everywhere; common",
     "unassuming": "unthreatening and down to earth",
     "unrequited": "not returned in kind, especially feelings",
-    "unseemly": "inappropraite for the situation",
+    "unseemly": "inappropriate for the situation",
     "unstinting": "given without pause or second thought",
     "unveil": "to reveal",
     "usurp": "to overthrow",
@@ -253,4 +255,4 @@ words = {
     "vestigial": "remaining as the last small part of something that existed before",
     "virtuous": "having or exhibiting a high sense of morality",
     "wayside": "the side of a road or path",
-    "yearning": "to want something with all your heart; to crave it at the expense of all else"}
+    "yearn": "to want something with all your heart; to crave it at the expense of all else"}
