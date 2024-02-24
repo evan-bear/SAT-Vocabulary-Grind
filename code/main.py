@@ -2,10 +2,20 @@ import random
 from barrons_definitions import words
 from barrons_roots import roots
 
-barrons = input("Definitions or root words? [d/r]\t")
-format = input("Multiple choice or flash cards? [mc/fc]\t")
-questions = min(int(input("How many practice words?\t\t")), len(words))
-command = input("Start practice? [y/n]\t\t\t")
+style = ""
+barrons = input("Definitions or root words? [d/r]\t\t\t")
+format = input("Multiple choice or flash cards? [m/f]\t\t\t")
+if format == "mc":
+    if barrons == "d":
+        style = input("Definition-to-word or word-to-definition? [d/w]\t\t")
+        while not (style == "d" or style == "w"):
+            style = input("Invalid. Definition-to-word or word-to-definition? [d/w]\t")
+    elif barrons == "r":
+        style = input("Definition-to-root or root-to-definition? [d/r]\t\t")
+        while not (style == "d" or style == "r"):
+            style = input("Definition-to-root or root-to-definition? [d/r]\t")
+questions = min(int(input("How many practice words?\t\t\t\t")), len(words))
+command = input("Start practice? [y/n]\t\t\t\t\t")
 
 while command == "y":
     correct = 0
@@ -20,22 +30,30 @@ while command == "y":
             while index in seen:
                 index = int(random.randrange(0, len(words), 1))
             seen.append(index)
-            answer = [*words][index]
-            definition = words[answer]
+
+            if style == "d":
+                question = [*words][index]
+                answer = words[question]
+            else:
+                answer = [*words][index]
+                question = words[answer]
             
             if format == "mc":
-                choice_index = [index]
                 choices = [answer]
+                choice_index = [index]
                 for i in range(3):
                     temp = int(random.randrange(0, len(words), 1))
                     while temp in choice_index:
                         temp = int(random.randrange(0, len(words), 1))
                     
                     choice_index.append(temp)
-                    choices.append([*words][temp])
+                    if style == "d":
+                        choices.append(words[[*words][temp]])
+                    elif style == "w":
+                        choices.append([*words][temp])
                 random.shuffle(choices)
                 
-                print(f"{z + 1}. {definition}: ")
+                print(f"{z + 1}. {question}: ")
                 print(f"A) {choices[0]}")
                 print(f"B) {choices[1]}")
                 print(f"C) {choices[2]}")
@@ -54,9 +72,8 @@ while command == "y":
                     incorrect += 1
                     print(f"Incorrect. Answer: {answer} ({chr(ord('A') + choices.index(answer))})")
                 print()
-            
             elif format == "fc":
-                response = input(f"{z + 1}. {definition}: ")
+                response = input(f"{z + 1}. {question}: ")
                 
                 if response == "quit":
                     break
@@ -75,7 +92,7 @@ while command == "y":
                         elif response == "pass":
                             print(f"Answer: {answer}")
                             break
-                        response = input(f"Incorrect. {definition} : ")
+                        response = input(f"Incorrect. {question} : ")
                     if breaking:
                         break
         
@@ -84,22 +101,30 @@ while command == "y":
             while index in seen:
                 index = int(random.randrange(0, len(roots), 1))
             seen.append(index)
-            answer = [*roots][index]
-            definition = roots[answer]
+            if style == "d":
+                question = [*roots][index]
+                answer = roots[question]
+            elif style == "r":
+                answer = [*roots][index]
+                question = roots[answer]
             
             if format == "mc":
-                choice_index = [index]
                 choices = [answer]
+                choice_index = [index]
+                choice_roots = [question]
                 for i in range(3):
                     temp = int(random.randrange(0, len(roots), 1))
                     while temp in choice_index:
                         temp = int(random.randrange(0, len(roots), 1))
                     
                     choice_index.append(temp)
-                    choices.append([*roots][temp])
+                    if style == "d":
+                        choices.append(roots[[*roots][temp]])
+                    elif style == "r":
+                        choices.append([*roots][temp])
                 random.shuffle(choices)
                 
-                print(f"{z + 1}. {definition}: ")
+                print(f"{z + 1}. {question}: ")
                 print(f"A) {choices[0]}")
                 print(f"B) {choices[1]}")
                 print(f"C) {choices[2]}")
@@ -126,5 +151,5 @@ while command == "y":
         print(f"Passed:\t\t{passed}")
     print()
     
-    command = input("Again? [y/n] \t\t\t\t")
+    command = input("Again? [y/n] \t\t\t\t\t\t")
 exit()
