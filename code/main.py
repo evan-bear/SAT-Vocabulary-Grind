@@ -5,7 +5,7 @@ from barrons_roots import roots
 style = ""
 barrons = input("Definitions or root words? [d/r]\t\t\t")
 format = input("Multiple choice or flash cards? [m/f]\t\t\t")
-if format == "mc":
+if format == "m":
     if barrons == "d":
         style = input("Definition-to-word or word-to-definition? [d/w]\t\t")
         while not (style == "d" or style == "w"):
@@ -38,7 +38,7 @@ while command == "y":
                 answer = [*words][index]
                 question = words[answer]
             
-            if format == "mc":
+            if format == "m":
                 choices = [answer]
                 choice_index = [index]
                 for i in range(3):
@@ -72,7 +72,7 @@ while command == "y":
                     incorrect += 1
                     print(f"Incorrect. Answer: {answer} ({chr(ord('A') + choices.index(answer))})")
                 print()
-            elif format == "fc":
+            elif format == "f":
                 response = input(f"{z + 1}. {question}: ")
                 
                 if response == "quit":

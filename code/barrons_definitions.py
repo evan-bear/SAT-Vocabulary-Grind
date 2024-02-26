@@ -85,7 +85,7 @@ words = {
     "endow": "to give",
     "enhance": "to make something better or clearer",
     "enterprise": "a project or undertaking that is especially difficult, complicated, or risky",
-    "entice": "to convince someone to do something through the promice of reward",
+    "entice": "to convince someone to do something through the promise of reward",
     "entrenched": "firmly established and difficult or unlikely to change; ingrained",
     "ephemeral": "lasting a very short time",
     "evince": "to show one's feelings",
